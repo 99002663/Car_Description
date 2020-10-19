@@ -1,0 +1,50 @@
+==37734== Memcheck, a memory error detector
+==37734== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==37734== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==37734== Command: ./all.out
+==37734== 
+Running main() from /build/googletest-j5yxiC/googletest-1.10.0/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from carTest
+[ RUN      ] carTest.count
+[       OK ] carTest.count (67 ms)
+[ RUN      ] carTest.Rating
+==37734== Conditional jump or move depends on uninitialised value(s)
+==37734==    at 0x11C172: CarSpecification::getCarRating() (in /home/saikiran/Documents/ltts_genisis/cplusproject/all.out)
+==37734==    by 0x11CAA6: CarFunction::getCarRating(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/saikiran/Documents/ltts_genisis/cplusproject/all.out)
+==37734==    by 0x117E23: (anonymous namespace)::carTest_Rating_Test::TestBody() (in /home/saikiran/Documents/ltts_genisis/cplusproject/all.out)
+==37734==    by 0x14C840: HandleSehExceptionsInMethodIfSupported<testing::Test, void> (gtest.cc:2433)
+==37734==    by 0x14C840: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (gtest.cc:2469)
+==37734==    by 0x1400B5: Run (gtest.cc:2508)
+==37734==    by 0x1400B5: testing::Test::Run() (gtest.cc:2498)
+==37734==    by 0x140214: Run (gtest.cc:2684)
+==37734==    by 0x140214: testing::TestInfo::Run() (gtest.cc:2657)
+==37734==    by 0x1402FC: Run (gtest.cc:2816)
+==37734==    by 0x1402FC: testing::TestSuite::Run() (gtest.cc:2795)
+==37734==    by 0x14081B: testing::internal::UnitTestImpl::RunAllTests() (gtest.cc:5338)
+==37734==    by 0x14CDB0: HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool> (gtest.cc:2433)
+==37734==    by 0x14CDB0: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (gtest.cc:2469)
+==37734==    by 0x140A4B: testing::UnitTest::Run() (gtest.cc:4925)
+==37734==    by 0x116F23: main (in /home/saikiran/Documents/ltts_genisis/cplusproject/all.out)
+==37734== 
+[       OK ] carTest.Rating (12 ms)
+[ RUN      ] carTest.Remove
+[       OK ] carTest.Remove (12 ms)
+[ RUN      ] carTest.Range
+[       OK ] carTest.Range (10 ms)
+[----------] 4 tests from carTest (105 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (125 ms total)
+[  PASSED  ] 4 tests.
+==37734== 
+==37734== HEAP SUMMARY:
+==37734==     in use at exit: 0 bytes in 0 blocks
+==37734==   total heap usage: 1,120 allocs, 1,120 frees, 246,175 bytes allocated
+==37734== 
+==37734== All heap blocks were freed -- no leaks are possible
+==37734== 
+==37734== Use --track-origins=yes to see where uninitialised values come from
+==37734== For lists of detected and suppressed errors, rerun with: -s
+==37734== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
